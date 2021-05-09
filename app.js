@@ -7,6 +7,7 @@ function eventListeners(){
     }
 }
 const translate = new Translate(document.getElementById("word").value,document.getElementById("language").value);
+const ui = new UI();
 
 function translateWord(e){
     
@@ -15,7 +16,7 @@ function translateWord(e){
         if(err){
             console.log(err)
         }else{
-            console.log(response)
+            ui.displayTranslate(response);
         }
     });
     e.preventDefault();
